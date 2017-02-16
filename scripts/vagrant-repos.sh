@@ -9,7 +9,7 @@ ssh-keyscan -t rsa github.com >> /home/vagrant/.ssh/known_hosts
 repos=(
   'u235core'
   'u235ctrl'
-#  'u235logger'
+  'u235logger'
 )
 
 # iterate through repo list and clone if the directory doesn't exist
