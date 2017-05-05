@@ -24,7 +24,7 @@ Vagrant.configure(2) do |config|
   # opens up the debug port
   config.vm.network :forwarded_port, guest: 5858, host: 5858
 
-  # open up e2 ports
+  # open up ports
   for i in 8000..8010
       config.vm.network :forwarded_port, guest: i, host: i
   end
@@ -37,6 +37,7 @@ Vagrant.configure(2) do |config|
   # Bridged networks make the machine appear as another physical device on
   # your network.
   # config.vm.network "public_network"
+  #config.vm.network "u235"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -44,6 +45,7 @@ Vagrant.configure(2) do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
   config.vm.synced_folder "~/.aws", "/home/vagrant/.aws"
+  config.vm.synced_folder "~/.ssh", "/home/vagrant/.ssh"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
